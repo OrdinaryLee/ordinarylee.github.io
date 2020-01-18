@@ -1,0 +1,204 @@
+<h1>常用软件的安装及配置</h1>
+<h2>Git</h2>
+<p>Linux 都自带 Git，Windows 版本<a href="https://git-scm.com/download/win">点击直接下载</a></p>
+<p>安装环境</p>
+<ul>
+<li>Windows 10 家庭中文版(版本 1903)</li>
+<li>Git-2.24.1.2-64-bit.exe</li>
+</ul>
+<p>安装步骤，一般一路 <code>next</code> 下去就可以了</p>
+<p><img src="../../static/images/install/git/git_install_1.jpg" alt="git_install_1" />
+<img src="../../static/images/install/git/git_install_2.jpg" alt="git_install_2" />
+<img src="../../static/images/install/git/git_install_3.jpg" alt="git_install_3" />
+<img src="../../static/images/install/git/git_install_4.jpg" alt="git_install_4" />
+<img src="../../static/images/install/git/git_install_5.jpg" alt="git_install_5" />
+<img src="../../static/images/install/git/git_install_6.jpg" alt="git_install_6" />
+<img src="../../static/images/install/git/git_install_7.jpg" alt="git_install_7" />
+<img src="../../static/images/install/git/git_install_8.jpg" alt="git_install_8" />
+<img src="../../static/images/install/git/git_install_9.jpg" alt="git_install_9" />
+<img src="../../static/images/install/git/git_install_10.jpg" alt="git_install_10" />
+<img src="../../static/images/install/git/git_install_11.jpg" alt="git_install_11" />
+<img src="../../static/images/install/git/git_install_12.jpg" alt="git_install_12" />
+<img src="../../static/images/install/git/git_install_13.jpg" alt="git_install_13" /></p>
+<p>Git 安装好以后设置用户名和邮箱，这是必须的，不然在第一次 commit 的时候也会要求你设置。</p>
+<div class="highlight"><pre><span></span>git config --global user.email <span class="s2">&quot;you@example.com&quot;</span>
+git config --global user.name <span class="s2">&quot;your name&quot;</span>
+</pre></div>
+
+<p>设置完以后可以去用户目录下查看，会生成一个 <code>.gitconfig</code> 文件。</p>
+<p>另外，<code>git-bash</code> 中不能运行 windows 控制台程序，比如 python 解释器，需要使用 <code>winpty python</code> 命令。或者在安装目录下的 <code>etc/bash.bashrc</code> 文件中添加 <code>alias python=&#x27;winpty python&#x27;</code> 就可以了。</p>
+<p>使用默认方式安装好 Git 之后，Git Bash 中就自带 VIM 和 SSH 功能，就不需要再单独安装这两个了。Git Bash 因为右键可以直接使用，所以不管是使用 VIM 还是 SSH，都是很方便的。</p>
+<p>更多内容请移步</p>
+<ul>
+<li><a href="">Git 的配置文件</a></li>
+<li><a href="">Git 常用的配置</a></li>
+<li><a href="">Git 的一些相关文件</a></li>
+</ul>
+<p>http://www.worldhello.net/gotgit/
+http://www.worldhello.net/gotgithub/</p>
+<h2>NGINX</h2>
+<ul>
+<li><a href="http://nginx.org/">官网</a></li>
+<li><a href="http://nginx.org/en/docs/">文档</a></li>
+<li><a href="http://nginx.org/en/linux_packages.html">安装方式</a></li>
+</ul>
+<p>安装环境</p>
+<ul>
+<li>Windows 10 子系统（Ubuntu 18.04.2 LTS）</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo apt update
+<span class="c1"># 安装依赖</span>
+sudo apt install curl gnupg2 ca-certificates lsb-release
+<span class="c1"># 安装 nginx</span>
+sudo apt install nginx
+</pre></div>
+
+<p>基本命令</p>
+<ul>
+<li>启动:　　　　　　　<code>sudo nginx</code></li>
+<li>快速关闭:　　　　　<code>sudo nignx -s stop</code></li>
+<li>平滑关闭:　　　　　<code>sudo nignx -s quit</code></li>
+<li>重载配置文件:　　　<code>sudo nignx -s reload</code></li>
+<li>重新打开日志文件:　<code>sudo nignx -s stop</code></li>
+</ul>
+<p>更多内容请移步</p>
+<ul>
+<li><a href="">Git 的配置文件</a></li>
+<li><a href="">Git 常用的配置</a></li>
+<li><a href="">Git 的一些相关文件</a></li>
+</ul>
+<h2>WSL -- Windows Subsystem for Linux</h2>
+<p>安装环境</p>
+<ul>
+<li>Windows 10 家庭中文版(版本 1903)</li>
+</ul>
+<p>打开 <code>控制面板</code> --&gt; <code>程序</code> --&gt; <code>程序和功能</code> --&gt; <code>启用或关闭 Windows 功能</code>，勾选 <code>适用于 Linux 的 Windows 子系统</code>, 然后重启。</p>
+<p><img src="../../static/images/install/wsl/wsl_install_1.jpg" alt="wsl_install_1" /></p>
+<p>打开 <code>Microsoft Store</code>，搜索 <code>Linux</code> ，会出来 <code>Ubuntu</code>、<code>Debian</code>、<code>SUSE Linux Enterprise Server</code> 等，选一个安装就行，大部分都是选择安装 <code>Ubuntu</code>。</p>
+<p>也可以直接<a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">点击这里</a></p>
+<p><img src="../../static/images/install/wsl/wsl_install_2.jpg" alt="wsl_install_2" />
+<img src="../../static/images/install/wsl/wsl_install_3.jpg" alt="wsl_install_3" /></p>
+<p>启动，设置用户名和密码</p>
+<p><img src="../../static/images/install/wsl/wsl_install_4.jpg" alt="wsl_install_4" /></p>
+<p>子系统路径</p>
+<div class="highlight"><pre><span></span><span class="c">C:\Users\用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs</span>
+</pre></div>
+
+<p>更改下载服务器</p>
+<p><a href="https://opsx.alibaba.com/">阿里巴巴开源镜像站</a></p>
+<div class="highlight"><pre><span></span><span class="c1"># 先备份</span>
+sudo cp /etc/apt/sources.list /etc/apt/sources_backup.list
+<span class="c1"># 查看备份成功了没有</span>
+ls /etc/apt
+<span class="c1"># 编辑 sources.list </span>
+sudo vim /etc/apt/sources.list
+</pre></div>
+
+<p>清空内容，替换为以下对应版本中的内容</p>
+<p>Ubuntu 14.04</p>
+<div class="highlight"><pre><span></span><span class="k">deb</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-security</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-security</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-updates</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-updates</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-backports</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">https://mirrors.aliyun.com/ubuntu/</span> <span class="kp">trusty-backports</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="c">## Not recommended</span>
+<span class="c"># deb https://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span>
+<span class="c"># deb-src https://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span>
+</pre></div>
+
+<p>ubuntu 16.04</p>
+<div class="highlight"><pre><span></span><span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial</span> <span class="kp">main</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial</span> <span class="kp">main</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-updates</span> <span class="kp">main</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-updates</span> <span class="kp">main</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial</span> <span class="kp">universe</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial</span> <span class="kp">universe</span>
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-updates</span> <span class="kp">universe</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-updates</span> <span class="kp">universe</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-security</span> <span class="kp">main</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-security</span> <span class="kp">main</span>
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-security</span> <span class="kp">universe</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">xenial-security</span> <span class="kp">universe</span>
+</pre></div>
+
+<p>ubuntu 18.04</p>
+<div class="highlight"><pre><span></span><span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-security</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-security</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-updates</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-updates</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-proposed</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-proposed</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+
+<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-backports</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/ubuntu/</span> <span class="kp">bionic-backports</span> <span class="kp">main</span> <span class="kp">restricted</span> <span class="kp">universe</span> <span class="kp">multiverse</span>
+</pre></div>
+
+<h2>PostgreSQL</h2>
+<p>安装环境</p>
+<ul>
+<li>系统: Ubuntu 18.04.2 LTS</li>
+<li>版本: PostgreSQL 10.9</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="err">sudo apt install postgresql</span>
+</pre></div>
+
+<p>安装环境:</p>
+<ul>
+<li>系统: Windows 10 家庭中文版(版本 1903)</li>
+<li>版本: PostgreSQL 11.5</li>
+</ul>
+<p><a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">下载安装包</a>，
+安装过程如下（版本 11.5）:</p>
+<p><img src="../../static/images/install/postgresql/postgresql_install_1.jpg" alt="1" />
+<img src="../../static/images/install/postgresql/postgresql_install_2.jpg" alt="2" />
+<img src="../../static/images/install/postgresql/postgresql_install_3.jpg" alt="3" />
+<img src="../../static/images/install/postgresql/postgresql_install_4.jpg" alt="4" />
+<img src="../../static/images/install/postgresql/postgresql_install_5.jpg" alt="5" />
+<img src="../../static/images/install/postgresql/postgresql_install_6.jpg" alt="6" />
+<img src="../../static/images/install/postgresql/postgresql_install_7.jpg" alt="7" />
+<img src="../../static/images/install/postgresql/postgresql_install_8.jpg" alt="8" />
+<img src="../../static/images/install/postgresql/postgresql_install_9.jpg" alt="9" />
+<img src="../../static/images/install/postgresql/postgresql_install_10.jpg" alt="10" />
+<img src="../../static/images/install/postgresql/postgresql_install_11.jpg" alt="11" /></p>
+<h2>Python</h2>
+<p>安装环境</p>
+<ul>
+<li>Windows 10 家庭中文版(版本 1903)</li>
+<li>Python 3.8.1</li>
+</ul>
+<p><a href="https://www.python.org/downloads/windows/">下载地址</a>，选择 <code>Windows x86-64 executable installer</code> 或 <code>Windows x86 executable installer</code> 进行下载，一个是 64 位的，一个是 32 位的，根据你的系统选择。</p>
+<p>安装步骤，第一步的时候勾选 <code>Add Python 3.x to PATH</code>
+<img src="../../static/images/install/python/python_install_1.jpg" alt="python_install_1" />
+<img src="../../static/images/install/python/python_install_2.jpg" alt="python_install_2" />
+<img src="../../static/images/install/python/python_install_3.jpg" alt="python_install_3" />
+<img src="../../static/images/install/python/python_install_4.jpg" alt="python_install_4" />
+<img src="../../static/images/install/python/python_install_5.jpg" alt="python_install_5" /></p>
+<p>安装完成后更换 pip 下载源，这里使用阿里云，找到 <code>C:\Users\用户名\AppData\Roaming\pip\pip.ini</code> 文件，没有的话新建一个。</p>
+<p>替换为以下内容即可</p>
+<div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">index-url</span> <span class="o">=</span> <span class="s">https://mirrors.aliyun.com/pypi/simple/</span>
+
+<span class="k">[install]</span>
+<span class="na">trusted-host</span><span class="o">=</span><span class="s">mirrors.aliyun.com</span>
+</pre></div>
+
+<p>或者使用命令</p>
+<div class="highlight"><pre><span></span><span class="err">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span>
+</pre></div>
+
+<p>linux 下的配置文件是</p>
+<p>~/.pip/pip.conf</p>
